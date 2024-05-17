@@ -9,8 +9,11 @@ interface AddUser {
     email: string;
 }
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+
 const ListUsers = () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+    const apiUrl = !isDevelopment ? process.env.NEXT_PUBLIC_API_URL : 'http://localhost:8000';
 
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<AddUser>({

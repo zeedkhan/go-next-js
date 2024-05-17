@@ -35,7 +35,7 @@ services:
     depends_on:
       - goapp
     environment:
-      - NEXT_PUBLIC_API_URL=http://13.214.139.63/:8000
+      - NEXT_PUBLIC_API_URL=http://13.214.139.63:8000
 
 volumes:
   pgdata: {}
